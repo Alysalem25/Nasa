@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+        .text svg {
+            font-family: "Russo One", sans-serif;
+            /* width: 50%; */
+            /* height: 100%; */
+            margin: 0px 0;
+        }
+
+        .text svg text {
+            animation: stroke 4s 1 alternate;
+            stroke-width: 1;
+            stroke: #ffffff;
+            fill: #ffffff;
+            font-size: 70px;
+
+        }
+        @keyframes stroke {
+            0% {
+                fill: rgba(72, 138, 204, 0);
+                stroke: rgb(219, 219, 219);
+                stroke-dashoffset: 25%;
+                stroke-dasharray: 0 50%;
+                stroke-width: 2;
+            }
+
+            70% {
+                fill: rgba(72, 138, 204, 0);
+                stroke: rgb(255, 255, 255);
+            }
+
+            80% {
+                fill: rgba(72, 138, 204, 0);
+                stroke: rgb(255, 255, 255);
+                stroke-width: 3;
+            }
+
+            100% {
+                fill: rgb(255, 255, 255);
+                stroke: rgba(54, 95, 160, 0);
+                stroke-dashoffset: -25%;
+                stroke-dasharray: 50% 0;
+                stroke-width: 0;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .showcase {
+            position: absolute;
+            right: 0;
+            width: 100%;
+            min-height: 100vh;
+            padding: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            transition: 0.5s;
+            z-index: 2;
+            }
+        .showcase.active{
+            right: 300px;
+            }
+
+        .showcase video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #03a9f4;
+            mix-blend-mode: overlay;
+        }
+        .text{
+            position: relative;
+            z-index: 10;
+        }
+
+        .text h2{
+            font-size: 5em;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1em;
+            text-transform: uppercase;
+        }
+        .text h3 {
+            font-size: 4em;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1em;
+            text-transform: uppercase;
+        }
+        .text p{
+            font-size: 1.1em;
+            color: #fff;
+            margin: 20px 0;
+            font-weight: 400;
+            max-width: 700px;
+        }
+        .text a{
+            display: inline-block;
+            font-size: 1em;
+            background: #fff;
+            padding: 10px 30px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            color: #111;
+            letter-spacing: 2px;
+            transition: 0.2s;
+        }
+        .text a:hover{
+            letter-spacing: 6px;
+        }
+        .inside_img{
+            z-index: 10;
+        }
+        .inside_img img{
+            border-radius: 50px;
+        }
+        @media only screen and (max-width: 1000px) {
+            .inside_img {
+                display: none;
+            }
+        }
+    </style>
+    <section class="showcase">
+        <video src="./213-Underwater-loop-background-YouTube.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+        <div class="text">
+            <svg>
+                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                        web title
+                </text>
+            </svg>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+            <a href="#">Explore</a>
+        </div>
+        <div class="inside_img">
+            <img src="./hereo.jpg" alt="">
+        </div>
+    </section>
+
+</body>
+
+</html>
