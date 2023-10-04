@@ -8,7 +8,7 @@ const Earth = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000); // Set the desired timeout duration in milliseconds (e.g., 3000ms = 3 seconds)
+    }, 4000); // Set the desired timeout duration in milliseconds (e.g., 3000ms = 3 seconds)
     return () => clearTimeout(timer);
 
   }, []);
