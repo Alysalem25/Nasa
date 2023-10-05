@@ -23,11 +23,8 @@ const ExperienceCard = ({ experience }) => {
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
-<<<<<<< HEAD
         // width: "",
         margin: "0 25px 0 25px",
-=======
->>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       iconStyle={{ background: experience.iconBg }}

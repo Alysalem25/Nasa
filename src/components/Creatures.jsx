@@ -16,11 +16,7 @@ const Creatures = () => {
 
   return (
     <>
-<<<<<<< HEAD
       <div className="AnimalsDiv flex flex-wrap justify-center pt-24">
-=======
-      <div className="AnimalsDiv flex justify-center pl-6 pt-24">
->>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
         <div className="radio-buttons-container">
           <div className="radio-button mr-1" key="all">
             <input
