@@ -57,8 +57,29 @@ import { Navbar } from "../components";
 import { styles } from "../styles";
 import { EarthCanvas } from "../components/canvas";
 import { slideIn } from "../utils/motion";
+import mailchimp from "@mailchimp/mailchimp_marketing";
+
+
 
 const News = () => {
+
+
+
+  mailchimp.setConfig({
+    apiKey: "40dfc24ba6bb52d0f2db3b13c2524565",
+    server: "us17",
+  });
+
+  async function run() {
+    try {
+      const response = await mailchimp.ping.get();
+      console.log(response);
+    } catch (error) {
+      console.error("Mailchimp API Error:", error.message);
+    }
+  }
+
+  run();
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -81,30 +102,57 @@ const News = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch(
-        "http://localhost:5000/api/mailchimp/subscribe",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form),
-        }
-      );
+      // 
+      run();
 
-      if (response.ok) {
-        console.log("data was sent")
-        // Handle success (e.g., show a success message)
-      } else {
-        // Handle error (e.g., show an error message)
+
+    
+      // try {
+      //   const response = await fetch(`https://${dc}.api.mailchimp.com/3.0/lists/${audienceId}/members`, {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //       'Authorization': `Basic ${Buffer.from(`apikey:${apiKey}`).toString('base64')}`,
+      //     },
+      //     body: JSON.stringify({
+      //       email_address: form.email,
+      //       status: 'subscribed',
+      //       merge_fields: {
+      //         FNAME: form.name,
+      //       },
+      //     }),
+      //   });
+    
+      // } catch (error) {
+      //   console.error(error);
       }
-    } catch (error) {
-      console.error(error);
-      // Handle network error
-    }
-  };
-// heeeey
+
+      // const audienceId = '6b16fdf565'; // Replace with your Mailchimp Audience ID
+      // const apiKey = '40dfc24ba6bb52d0f2db3b13c2524565-us17'; // Replace with your Mailchimp API Key
+      // const dc = 'us17.';
+
+    //   const response = await fetch(
+    //     "http://localhost:5000/api/mailchimp/subscribe",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(form),
+    //     }
+    //   );
+
+    //   if (response.ok) {
+    //     console.log("data was sent")
+    //     // Handle success (e.g., show a success message)
+    //   } else {
+    //     // Handle error (e.g., show an error message)
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    //   // Handle network error
+    // }
+  
 
   return (
     <div className="bg-primary">
