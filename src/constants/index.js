@@ -20,10 +20,6 @@ import {
 
 export const navLinks = [
   {
-    id: "/",
-    title: "Home",
-  },
-  {
     id: "species",
     title: "Species",
   },
@@ -34,6 +30,10 @@ export const navLinks = [
   {
     id: "earth",
     title: "Earth",
+  },
+  {
+    id: "news",
+    title: "News Paper",
   },
 ];
 

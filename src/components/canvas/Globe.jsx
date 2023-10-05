@@ -97,6 +97,7 @@ const GlobeComponent = () => {
     // Add more country coordinates here...
   ];
 
+
   const onDocumentMouseDown = (event) => {
     event.preventDefault();
     document.addEventListener("mousemove", onDocumentMouseMove);
