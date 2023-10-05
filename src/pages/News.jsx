@@ -79,7 +79,6 @@ const News = () => {
     }
   }
 
-  run();
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
