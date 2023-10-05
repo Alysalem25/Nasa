@@ -11,6 +11,8 @@ import Diagram from "./Diagram"
 import hero from "../assets/hereo.jpg"
 // import hero from "./hero-2.jpeg"
 import herobg from "../assets/213-Underwater-loop-background-YouTube.mp4"
+import { Link } from "react-router-dom";
+
 const Hero = () => {
   return (
     <div className="relative ">
@@ -34,10 +36,12 @@ const Hero = () => {
             make a positive impact on the well-being of our marine creatures and
             the quality of our waters.
           </p>
-          <a href="/species" className="text-align">
+
+          <Link to="/species" className="text-align">
             <span>Explore</span>
             <div className="liquid"></div>
-          </a>
+          </Link>
+
         </div>
         <div className="inside_img">
           <img src={hero} alt="" />

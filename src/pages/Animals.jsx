@@ -4,7 +4,7 @@ import { Navbar, Creatures } from "../components";
 
 const Animals = () => {
   return (
-    <div className="bg-primary h-full mb-0">
+    <div className="bg-primary h-full pb-24">
       <Navbar />
       <Creatures />
     </div>

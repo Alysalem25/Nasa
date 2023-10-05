@@ -23,8 +23,11 @@ const ExperienceCard = ({ experience }) => {
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
+<<<<<<< HEAD
         // width: "",
         margin: "0 25px 0 25px",
+=======
+>>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       iconStyle={{ background: experience.iconBg }}
@@ -76,10 +79,10 @@ const Saveus = () => {
           How do we protect endangered <br />
           marine species?
         </h2>
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex items-center justify-center ">
           <motion.p
             variants={fadeIn("", "", 0.1, 1)}
-            className="mt-3 text-[#eef2ff] text-[17px] max-w-5xl leading-[30px] "
+            className="mt-3 px-7 text-[#eef2ff] max-w-6xl leading-[30px]  md:text-[20px] sm:text-[15px] xs:text-[10px] text-[12px] "
           >
             Human development, and man's contributions to all areas of life, are
             considered to have made him forget how to maintain the balance of
@@ -93,7 +96,7 @@ const Saveus = () => {
         <div className="w-full flex items-center justify-center">
           <motion.p
             variants={fadeIn("", "", 0.1, 1)}
-            className="mt-3 text-[#eef2ff] text-[17px] max-w-5xl leading-[30px] "
+            className="mt-3 px-7 text-[#eef2ff] max-w-6xl leading-[30px]   md:text-[20px] sm:text-[15px] xs:text-[10px] text-[12px]   "
           >
             But it's not too late to fix what we've done. These are some of the
             solutions we have thought of that could help these poor creatures

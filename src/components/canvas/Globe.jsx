@@ -21,6 +21,8 @@ const GlobeComponent = () => {
   const [creature, setCreature] = useState("");
   const [cid, setCid] = useState(0);
   const [cimage, setCimage] = useState("");
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
 
   const containerRef = useRef(null);
   const targetRotationX = useRef(0.05);
@@ -103,6 +105,7 @@ const GlobeComponent = () => {
      mouseYOnMouseDown.current = event.clientY - windowHalfY.current;
    };
 
+<<<<<<< HEAD
    const onDocumentMouseMove = (event) => {
      mouseX.current = event.clientX - windowHalfX.current;
      targetRotationX.current =
@@ -122,6 +125,15 @@ const GlobeComponent = () => {
        event.preventDefault();
        document.addEventListener("touchmove", onDocumentTouchMove);
        document.addEventListener("touchend", onDocumentTouchEnd);
+=======
+  const onDocumentMouseDown = (event) => {
+    event.preventDefault();
+    document.addEventListener("mousemove", onDocumentMouseMove);
+    document.addEventListener("mouseup", onDocumentMouseUp);
+    mouseXOnMouseDown.current = event.clientX - windowHalfX.current;
+    mouseYOnMouseDown.current = event.clientY - windowHalfY.current;
+  };
+>>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
 
        mouseXOnMouseDown.current =
          event.touches[0].clientX - windowHalfX.current;
@@ -144,6 +156,35 @@ const GlobeComponent = () => {
   const onDocumentTouchEnd = () => {
      document.removeEventListener("touchmove", onDocumentTouchMove);
      document.removeEventListener("touchend", onDocumentTouchEnd);
+  };
+  /////////////////////////////////////////////////////////////
+  const onDocumentTouchStart = (event) => {
+    if (event.touches.length === 1) {
+      event.preventDefault();
+      document.addEventListener("touchmove", onDocumentTouchMove);
+      document.addEventListener("touchend", onDocumentTouchEnd);
+
+      mouseXOnMouseDown.current =
+        event.touches[0].clientX - windowHalfX.current;
+      mouseYOnMouseDown.current =
+        event.touches[0].clientY - windowHalfY.current;
+    }
+  };
+
+  const onDocumentTouchMove = (event) => {
+    if (event.touches.length === 1) {
+      mouseX.current = event.touches[0].clientX - windowHalfX.current;
+      targetRotationX.current =
+        (mouseX.current - mouseXOnMouseDown.current) * dragFactor;
+      mouseY.current = event.touches[0].clientY - windowHalfY.current;
+      targetRotationY.current =
+        (mouseY.current - mouseYOnMouseDown.current) * dragFactor;
+    }
+  };
+
+  const onDocumentTouchEnd = () => {
+    document.removeEventListener("touchmove", onDocumentTouchMove);
+    document.removeEventListener("touchend", onDocumentTouchEnd);
   };
 
   const writeContent = () => {
@@ -176,8 +217,16 @@ const GlobeComponent = () => {
     camera.position.z = 1.7;
     cameraRef.current = camera;
 
+<<<<<<< HEAD
     // create earthGeometry
     const earthGeometry = new THREE.SphereGeometry(0.2, 32, 32);
+=======
+    const scaleFactor = screenWidth < 760 ? 0.5 : 1.0;
+
+
+    // create earthGeometry
+    const earthGeometry = new THREE.SphereGeometry(0.4 * scaleFactor, 32, 32);
+>>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
 
     const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
     scene.add(earthMesh);
@@ -192,13 +241,21 @@ const GlobeComponent = () => {
     scene.add(pointerlight);
 
     // create cloudGeometry
+<<<<<<< HEAD
     const cloudGeometry = new THREE.SphereGeometry(0.21, 32, 32);
+=======
+    const cloudGeometry = new THREE.SphereGeometry(0.42 * scaleFactor, 32, 32);
+>>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
 
     const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
     scene.add(cloudMesh);
 
     // create starGeometry
+<<<<<<< HEAD
     const starGeometry = new THREE.SphereGeometry(2.5, 64, 64);
+=======
+    const starGeometry = new THREE.SphereGeometry(5 * scaleFactor, 64, 64);
+>>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
 
     const starMesh = new THREE.Mesh(starGeometry, starMaterial);
     scene.add(starMesh);
@@ -234,7 +291,10 @@ const GlobeComponent = () => {
       domEvents.addEventListener(markerMesh, "click", handleClick);
       domEvents.addEventListener(markerMesh, "touchstart", handleClick);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
       markers.push(markerMesh);
     });
 
@@ -263,7 +323,11 @@ const GlobeComponent = () => {
         const country = countryData[index];
         const phi = ((90 - country.latitude) * Math.PI) / 180;
         const theta = ((country.longitude + 180) * Math.PI) / 180;
+<<<<<<< HEAD
         const radius = 0.2;
+=======
+        const radius = 0.4 * scaleFactor;
+>>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
         // Convert spherical coordinates to Cartesian coordinates
         const markerX = radius * Math.cos(phi) * Math.cos(theta);
         const markerY = radius * Math.sin(phi);
@@ -279,6 +343,10 @@ const GlobeComponent = () => {
     };
 
     const handleResize = () => {
+<<<<<<< HEAD
+=======
+      setScreenWidth(window.innerWidth);
+>>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
       windowHalfX.current = window.innerWidth / 2;
       windowHalfY.current = window.innerHeight / 2;
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -297,6 +365,7 @@ const GlobeComponent = () => {
     container.addEventListener("mousedown", onDocumentMouseDown);
     container.addEventListener("touchstart", onDocumentTouchStart);
 
+<<<<<<< HEAD
 
     return () => {
       cancelAnimationFrame(animationFrameId);
@@ -305,6 +374,14 @@ const GlobeComponent = () => {
       container.removeEventListener("touchstart", onDocumentTouchStart);
 
 
+=======
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("resize", handleResize);
+      container.removeEventListener("mousedown", onDocumentMouseDown);
+      container.removeEventListener("touchstart", onDocumentTouchStart);
+
+>>>>>>> 25898335edc6432c5774cd28d9275b179187bd1b
       container.removeChild(renderer.domElement);
     };
 
