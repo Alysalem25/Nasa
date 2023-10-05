@@ -16,7 +16,7 @@ const Creatures = () => {
 
   return (
     <>
-      <div className="AnimalsDiv flex justify-center pt-24">
+      <div className="AnimalsDiv flex flex-wrap justify-center pt-24">
         <div className="radio-buttons-container">
           <div className="radio-button mr-1" key="all">
             <input
@@ -34,7 +34,7 @@ const Creatures = () => {
             </label>
           </div>
         </div>
-        <div className="radio-buttons-container flex justify-center">
+        <div className="radio-buttons-container flex flex-wrap justify-center text-center">
           {oceans.map((ocean) => (
             <div className="radio-button" key={ocean}>
               <input
@@ -61,7 +61,7 @@ const Creatures = () => {
       {/* Render the filtered projects */}
       <div
         id="FiltrationAnimals"
-        className={`mt-20 flex justify-center flex-wrap gap-3 ${
+        className={`md:m-20 mt-20 flex justify-center flex-wrap gap-3 ${
           showFiltration ? "" : "hidden"
         }`}
       >

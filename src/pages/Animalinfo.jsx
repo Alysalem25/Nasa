@@ -22,29 +22,31 @@ return (
         filteredCreatures.map((creature) => (
           <div key={creature.id}>
             <div className="MainInfo">
-              <div className="col ColInfo">
-                {/* <h1>{creature.id}</h1> */}
-                <h1 className="text-secondary">{creature.name}</h1>
-                <p>
-                  <span className="text-secondary "> Ocean:</span>{" "}
-                  {creature.ocean}
-                </p>
-                <p>
-                  <span className="text-secondary ">Kingdom:</span>{" "}
-                  {creature.Kingdom}
-                </p>
-                <p>
-                  <span className="text-secondary ">Description:</span>{" "}
-                  {creature.description}
-                </p>
-              </div>
-              <div className="col">
-                <img
-                  src={creature.image}
-                  alt={creature.name}
-                  className="w-full h-full object-cover rounded-2xl"
-                />
-              </div>
+             <div className="row">
+               <div className="col ColInfo">
+                 {/* <h1>{creature.id}</h1> */}
+                 <h1 className="text-secondary">{creature.name}</h1>
+                 <p>
+                   <span className="text-secondary "> Ocean:</span>{" "}
+                   {creature.ocean}
+                 </p>
+                 <p>
+                   <span className="text-secondary ">Kingdom:</span>{" "}
+                   {creature.Kingdom}
+                 </p>
+                 <p>
+                   <span className="text-secondary ">Description:</span>{" "}
+                   {creature.description}
+                 </p>
+               </div>
+               <div className="col">
+                 <img
+                   src={creature.image}
+                   alt={creature.name}
+                   className="w-full h-full object-cover rounded-2xl"
+                 />
+               </div>
+             </div>
             </div>
             <div className="VideoDiv">
               <iframe

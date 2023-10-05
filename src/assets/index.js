@@ -29,7 +29,13 @@ import innovIcon from "./Innovation-technology-icon.jpeg"
 import aware from "./marine-education-programme.jpg"
 import awareIcon from "./awareness.png"
 
+import dirty2 from "./dirty_water2.jpg"
+import clean_water from "./clean_water.jpg"
+import very_dirty_water from "./very_dirty_water.jpg"
 export {
+  very_dirty_water,
+  clean_water,
+  dirty2,
   protecteed,
   protecteedIcon,
   research,

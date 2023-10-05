@@ -10,6 +10,7 @@ import Home from "./pages/Home"
 import Saveus from "./pages/Saveus";
 import Animalinfo from "./pages/Animalinfo";
 import Animals from "./pages/Animals"
+import Game from "./pages/Game"
 const App = () => {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ const App = () => {
         <Route exact path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/earth" element={<Earth />} />
+        <Route path="/game" element={<Game />} />
         <Route path="/saveus" element={<Saveus />} />
         <Route path="/species" element={<Animals />} />
         <Route path="/species/:animalid" element={<Animalinfo />} />

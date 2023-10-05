@@ -213,7 +213,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #212121;
+  background-color: rgb(5, 8, 22);
 }
 
 section {
@@ -224,7 +224,7 @@ section {
 
 .row {
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .card {
@@ -234,8 +234,22 @@ section {
   height: 150px;
   width: 25%;
   margin: 10px 0;
-  transition: all 2.3s ease;
+  /* transition: all 2.3s ease; */
   perspective: 1200px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    height: 150px;
+    width: 80%;
+    margin: 10px 0;
+    /* transition: all 2.3s ease; */
+    perspective: 1200px;
+    transform: translate(-50%, 0%);
+  }
 }
 
 .card:hover .cover {
@@ -1083,7 +1097,7 @@ section {
   margin: 20px;
 }
 
-.MainInfo div {
+.MainInfo .ColInfo {
   width: 50%;
   margin: 10px;
   height: 350px;
@@ -1092,6 +1106,10 @@ section {
   /* align-content: center; */
   justify-content: space-around;
   align-items: flex-start;
+}
+
+.row .col {
+  margin: 110px 0 0 0;
 }
 
 .ColInfo p {
@@ -1133,7 +1151,17 @@ section {
     margin: 20px;
   }
 
-  .MainInfo div {
+  .row {
+    align-items: stretch;
+    /* margin-top: 296px; */
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: space-between;
+  }
+
+  .MainInfo .ColInfo {
     width: 100%;
     margin: 10px;
     height: 350px;
@@ -1142,6 +1170,7 @@ section {
     /* align-content: center; */
     justify-content: space-around;
     align-items: flex-start;
+    margin: 20px;
   }
 
   .video {
@@ -1153,3 +1182,288 @@ section {
 }
 
 /* animal info main info */
+
+/* Result color container */
+.resultColor {
+  width: 68.5%;
+  height: 151px;
+  background-color: #00cea8;
+  border: 2px solid #00cea8;
+  /* margin-bottom: 20px; */
+}
+.resultColor img{
+    object-fit: cover;
+}
+
+.game_data {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.game_data div {
+  margin: 10px;
+}
+
+/* Table container */
+/* .game table {
+  width: 80%;
+  max-width: 600px;
+  border: 3px solid #0391bf;
+  background-image: url(../src/assets/hereo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* Table rows and cells */
+.game tr td {
+  min-width: 90px;
+  height: calc(80vh / 5);
+  /* border: 1px solid #0391bf; */
+  /* background-image: url(/src/assets/github.png); */
+  text-align: center;
+}
+
+/* Dropping element animation */
+/* .element-move {
+  animation: moveElement 20ms ease;
+}
+
+@keyframes moveElement {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+} */
+
+/* Score and failed score */
+.score,
+.failed-score {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.start-button,
+.reset-button {
+  padding: 10px 20px;
+  background-color: #00cea8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.start-button:hover,
+.reset-button:hover {
+  background-color: #009c87;
+}
+
+/* Lose message */
+.lose-message,
+.cogratolation-msg {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: rgb(5, 8, 22);
+  width: 50%;
+  /* height: 400px; */
+  /* text-align: center; */
+  /* align-items: center; */
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: red;
+  /* margin-top: 20px; */
+  /* align-content: space-around; */
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 30px 0;
+}
+
+.lose-message .you_lose_msg {
+  position: absolute;
+  top: 10px;
+}
+
+.lose-message .you_lose_msg {
+  font-size: 50px;
+  /* padding: 30px 0; */
+}
+
+.lose_msg_info p {
+  width: 200px;
+
+}
+
+.lose_msg_info {
+  width: 100%;
+  color: rgb(30, 171, 238);
+  margin: 100px 20px 30px 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  /* Adjust the number of lines as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lose-message button,
+.cogratolation-msg button,
+.start_game {
+  align-items: center;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 18px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all .3s;
+}
+.start_game{
+  margin: 10px;
+}
+
+.lose-message button:active,
+.lose-message button:hover,
+.cogratolation-msg button:active,
+.cogratolation-msg button:hover 
+.start_game:active,
+.start_game:hover {
+  outline: 0;
+}
+
+.lose-message button span,
+.cogratolation-msg button span,
+.start_game span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.lose-message button:hover span,
+.cogratolation-msg button:hover span ,
+.start_game:hover span 
+{
+  background: none;
+}
+
+.lose-message button:active,
+.cogratolation-msg button:active,
+ .start_game:active
+ {
+  transform: scale(0.9);
+}
+
+
+/* Custom colors for element and basket */
+.element,
+.basket {
+  color: #000;
+}
+
+/* Dropping element animation */
+
+
+/* Score and failed score */
+.score,
+.failed-score {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.start-button,
+.reset-button {
+  padding: 10px 20px;
+  background-color: #00cea8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.start-button:hover,
+.reset-button:hover {
+  background-color: #009c87;
+}
+
+/* Lose message */
+
+
+.game {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(5, 8, 22);
+  /* Set the background color to black */
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; Use the full viewport height */
+  /* margin: 100px 0 0 0 0; */
+  overflow: hidden;
+  /* Hide overflow to prevent scrolling */
+  position: relative;
+  top: 90px;
+  background-image: url(../src/assets/50%dirty_water.jpg);
+}
+
+/* 
+.game .resultColor {
+  width: 100px;
+  height: 80vh;
+  border: #00cea8 1px solid;
+}
+
+.game table {
+  width: 100vw;
+  border: #0391bf 3px solid;
+  height: calc(80vh / 5);
+} */
+
+.game tr td {
+  /* width: calc(); */
+}
+
+/* 
+.element-move {
+  animation: moveElement 0.3s ease;
+}
+
+@keyframes moveElement {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+} */
+
+/* game*/

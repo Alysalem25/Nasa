@@ -93,13 +93,13 @@ const CreatureCard = ({
             scale: 1,
             speed: 450,
           }}
-          className="bg-tertiary p-5 rounded-2xl sm:w-[350px] w-full"
+          className="bg-tertiary p-5 rounded-2xl sm:w-[350px] w-full p-5"
         >
-          <div className="relative w-full h-[230px]">
+          <div className="relative w-full md:h-[230px]">
             <img
               src={image}
               alt="project_image"
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full md:h-full object-cover rounded-2xl"
             />
           </div>
 

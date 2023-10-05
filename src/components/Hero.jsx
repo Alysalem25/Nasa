@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+import Diagram from "./Diagram"
 // import { styles } from "../styles";
 // // import { ComputersCanvas } from "./canvas";
 // import { GlobeComponent } from "./canvas";
@@ -23,7 +24,7 @@ const Hero = () => {
             </text>
           </svg>
           <p>
-            "What's Up With This Water" website Whether you are a curious
+            Whats Up With This Water website Whether you are a curious
             individual, an environmental enthusiast, or a concerned citizen,
             this website is designed to provide you with a wealth of knowledge
             about marine creatures and water quality. Explore our resources,
@@ -59,6 +60,9 @@ const Hero = () => {
           </div>
         </a>
       </div> */}
+
+
+<Diagram/>
     </div>
   );
 };
